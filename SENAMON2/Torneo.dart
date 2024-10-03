@@ -65,12 +65,12 @@ class Torneo {
     int opcionMenuFase1;
     int opcionMenuTorneoFase1;
 
-    print(" 🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱 FASE UNO 🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱");
+    print(" 🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱 FASE ${this._fase} 🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱🧱");
     print(" ");
 
     do {
       print("""
-          ------------ MENU FASE ${this._fase} -----------
+          ------------------ MENU FASE ${this._fase} -----------------
         |  1. Crear Entrenador y atrapar senamones         |
         |  0. Salir                                        |
         |  Seleccione una opción:                          |
@@ -93,7 +93,7 @@ class Torneo {
           } else if (this._fase == 2) {
 
             cantCompetidores = 0;
-            print("ingrese la cantidad de participantes que  competiran");
+            print("Ingrese la cantidad de participantes que  competiran");
             cantCompetidores = int.parse(stdin.readLineSync()!);
             print(".......................................................");
 
@@ -111,7 +111,7 @@ class Torneo {
           print("");
 
             print("""
-                  -----INICIASTE EL TORNEO FASE ${this._fase}🦊 -----
+                   --------- INICIASTE EL TORNEO FASE ${this._fase}🦊 -------------
                   | 1. Cambiar Senamon                                 |
                   | 2. Entrenar Senamones                              |
                   | 3. Realizar Batalla                                |
@@ -164,7 +164,6 @@ class Torneo {
                 mostrarSenamonesExistentes();
                 mostrarSenamonesPorEntrenador(
                     this._listaEntrenadores[numeroEntrenado]);
-
                 break;
 
               case 2:
@@ -241,11 +240,9 @@ class Torneo {
                   
                   do {
                     //Seleccion del senamon del primer entrenador
-
                     senamonIniciaCompetir = seleccionSenamonParaBatalla(entrenadorInicia, ListSenamonEntrenadorInicia);
 
                     //Seleccion del senamon del segundo entrenador
-
                     senamonContinuaCompetir = seleccionSenamonParaBatalla( entrenadorContinua, ListSenamonEntrenadorContinua);
                     
                     print("Competiran:");
@@ -273,7 +270,6 @@ class Torneo {
                       if (senamonMuerto2 == true) {
                         break;
                       }
-                    
                     }
                   } while (ListSenamonEntrenadorInicia.length >= 3 &&
                       ListSenamonEntrenadorContinua.length >= 3);
@@ -289,13 +285,12 @@ class Torneo {
                   }
 
                   if (ListSenamonEntrenadorContinua.length < 3) {
-                    print( "El ganador de la  batalla es ${this._listaEntrenadores[entrenadorInicia].getNombreEntrenador()}");
+                    print("El ganador de la  batalla es ${this._listaEntrenadores[entrenadorInicia].getNombreEntrenador()}");
                     this._listaEntrenadores[entrenadorInicia].setbatallasGan(this._listaEntrenadores[entrenadorInicia] .getbatallasGan() +1);
                     this._listaEntrenadores[entrenadorInicia].setexperiencia(this._listaEntrenadores[entrenadorInicia] .getexperiencia() +100);
 
                   } else if (ListSenamonEntrenadorInicia.length < 3) {
-                    print(
-                        "El ganador de la batalla es ${this._listaEntrenadores[entrenadorContinua].getNombreEntrenador()}");
+                    print("El ganador de la batalla es ${this._listaEntrenadores[entrenadorContinua].getNombreEntrenador()}");
                     this._listaEntrenadores[entrenadorContinua].setbatallasGan( this._listaEntrenadores[entrenadorContinua].getbatallasGan() +1);
                     this._listaEntrenadores[entrenadorContinua].setexperiencia(this ._listaEntrenadores[entrenadorContinua].getexperiencia() + 100);
                   } else {
@@ -310,13 +305,11 @@ class Torneo {
               }else{
                   mostrarinfo();
               }
-                
             }
           } while (opcionMenuTorneoFase1 != 0);
       }
     } while (opcionMenuFase1 != 0);
   }
-
               //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°° METODOS °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°//
 
                 entrenador crearentrenador(int numeroentrenador) {
@@ -511,6 +504,4 @@ class Torneo {
                     print("El entrenador  ${this._listaEntrenadores[i].getNombreEntrenador()} tiene un total de: ${this._listaEntrenadores[i].getbatallasGan()} batallas ganadas");
                   }
                 }
-                
-
               }

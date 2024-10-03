@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'Torneo.dart';
-
 void main() {
   int opcionIndice;
 
@@ -25,11 +23,11 @@ void main() {
     switch (opcionIndice) {
       case 1:
         int fase = 1;
-         print("""                       °°°°°°°°°°°°° INSTRUCCION   °°°°°°°°°°°°°°
+         print("""                       °°°°°°°°°°°°°  INSTRUCCION   °°°°°°°°°°°°°°
 
-                 
-                  print("");
-                 print("");### ANTES DE COMENZAR ESTE JUEGO ES NECESARIO QUE SEPA QUE ES APTO PARA MAXICO 2 PARTICIPANTES###""");
+### ANTES DE COMENZAR ESTE JUEGO ES NECESARIO QUE SEPA QUE ES APTO PARA MAXIMO 2 PARTICIPANTES ### """);
+print("");
+print("");
         Torneo faseUno = Torneo(fase);
         faseUno.Iniciar();
         break;
@@ -37,14 +35,13 @@ void main() {
       case 2:
         int fase = 2;
         
-         print("""                       °°°°°°°°°°°°° INSTRUCCION   °°°°°°°°°°°°°°
+         print("""                       °°°°°°°°°°°°°  INSTRUCCION   °°°°°°°°°°°°°°
 
-                 ### ANTES DE COMENZAR ESTE JUEGO ES NECESARIO QUE SEPA QUE ES APTO PARA MAXICO 4 PARTICIPANTES###""");
-                 print("");
-                 print("");
+### ANTES DE COMENZAR ESTE JUEGO ES NECESARIO QUE SEPA QUE ES APTO PARA MAXIMO 4 PARTICIPANTES ###""");
+print("");
+print("");
         Torneo faseDos = Torneo(fase);
         faseDos.Iniciar();
-
     }
   } while (opcionIndice != 0);
 }
